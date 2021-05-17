@@ -49,6 +49,7 @@ class Timer {
     };
 
     set timeRemaining(time) {
-        this.durationInput.value = time;
+        this.durationInput.value = time.toFixed(2);
+            // added toFixed so we avoid weird rounding errors and repeating 9s on the timer clock
     };
 }
