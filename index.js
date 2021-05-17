@@ -21,7 +21,16 @@ class Timer {
     };
 
     tick = () => {
-        console.log('tick');
+        this.timeRemaining = this.timeRemaining - 1;
+    };
+
+    get timeRemaining() {
+        return parseFloat(this.durationInput.value);
+            // using parseFloat > parseInt for eventual use of decimals in our timer
+    };
+
+    set timeRemaining(time) {
+        this.durationInput.value = time;
     };
 }
 
