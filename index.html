@@ -4,32 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Timer</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/d5e8e4c538.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <svg height="400" width="400">
-            <!-- ^^ setting the SVG canvas size -->
-        <circle 
-            r="190" 
-            cx="200" 
-            cy="200"
+    <div class="timer">
+        <div class="controls">
+          <input id="duration" value="3" />
+          <div>
+            <button id="start"><i class="fas fa-play"></i></button>
+            <button id="pause"><i class="fas fa-pause"></i></button>
+          </div>
+        </div>
+        <svg class="dial">
+          <circle
             fill="transparent"
             stroke="green"
             stroke-width="15"
-            transform="rotate(-90 200 200)" 
-        />
-            <!-- r is radius / cs/cy are the center points or where to place the object in the SVG canvas -->
+            r="190"
+            cx="0"
+            cy="200"
+            transform="rotate(-90 100 100)"
+          />
+          <!-- r is radius / cs/cy are the center points or where to place the object in the SVG canvas -->
             <!-- dasharray and dashoffset properties are added in dynamically in index.js -->
                 <!-- we find the perimeter of the circle with (2 * PI * radius) for the dasharray values -->
                 <!-- adding negative numbers to the dashoffset property makes it go the other way for us -->
             <!-- the transform will rotate the circle counter-clockwise by 90 degrees so the blank spaces start at the top AND the "200 200" is for the rotation to happen at the circle's center point -->
-    </svg>
-
-    <input id="duration" value="30" />
-    <button id="start">Start</button>
-    <button id="pause">Pause</button>
-
-
+        </svg>
+      </div>
+   
     <script src="timer.js"></script>
     <script src="index.js"></script>
 </body>
