@@ -7,6 +7,25 @@
     <title>Document</title>
 </head>
 <body>
+    <svg height="200" width="200">
+            <!-- ^^ setting the SVG canvas size -->
+        <circle 
+            r="90" 
+            cx="100" 
+            cy="100"
+            fill="transparent"
+            stroke="green"
+            stroke-width="10"
+            stroke-dasharray="565"
+            stroke-dashoffset="0"
+            transform="rotate(-90 100 100)" 
+        />
+            <!-- r is radius / cs/cy are the center points or where to place the object in the SVG canvas -->
+            <!-- we find the perimeter of the circle with (2 * PI * radius) for the dasharray values -->
+            <!-- adding negative numbers to the dashoffset property makes it go the other way for us -->
+            <!-- the transform will rotate the circle counter-clockwise by 90 degrees so the blank spaces start at the top AND the "100 100" is for the rotation to happen at the circle's center point -->
+    </svg>
+
     <input id="duration" value="30" />
     <button id="start">Start</button>
     <button id="pause">Pause</button>
