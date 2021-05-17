@@ -21,7 +21,7 @@ class Timer {
         }
         this.tick(); 
             // calling tick() manually before because setInterval takes a second to even start
-        this.interval = setInterval(this.tick, 1000); 
+        this.interval = setInterval(this.tick, 50); // reduced from 1000 to 50 for smoother animation of the circle SVG 
             // "interval" captures the "ID" of the setInterval so we can clear it in the pause functionality, we use "this" so we can use it in other methods
     };
 
@@ -36,7 +36,7 @@ class Timer {
                 this.onComplete();
             }
         } else {
-            this.timeRemaining = this.timeRemaining - 1;
+            this.timeRemaining = this.timeRemaining - 0.05; // reduced from 1 to 50ms to match the new setInterval every 50 ms in start()
             if (this.onTick) {
                 this.onTick();
             }
